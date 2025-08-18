@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleForMobile.css">
+</head>
+<body>
+    <div class="main">
+        <!-- navbar of the website -->
+        <nav>
+            <!-- logo of the website -->
+            <div class="logo">
+                <img src="logo3.svg" alt="">
+                <p>Complain<span>Easy</span></p>
+            </div>
+            <div class="navSection2">
+                <!-- authentication button [login] -->
+                <div class="userInfo">
+                    <a href="login.html" class="login">Login</a>
+                </div>
+                <!-- menu bar of the navbar -->
+                <div class="menu" onclick="show()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M4 6l16 0" />
+                        <path d="M4 12l16 0" />
+                        <path d="M4 18l16 0" />
+                    </svg>
+                </div>
+            </div>
+        </nav>
+        <div class="menuDropdown">
+            <a href="#" class="quickLink"><i class="fas fa-home"></i> Home</a>
+            <a href="#" class="quickLink"><i class="fas fa-user"></i> Profile</a>
+            <a href="#" class="quickLink"><i class="fas fa-truck"></i> Track</a>
+            <a href="#" class="quickLink"><i class="fas fa-phone"></i> Contact Us</a>
+            <a href="#" class="logout" id="log-out"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </div>
+
+    <script> 
+        const dropdown = document.querySelector(".menuDropdown");
+        const menuBtn = document.querySelector(".menu");
+        show = function show(){
+            dropdown.classList.toggle("active");
+        }   
+
+        document.addEventListener("click", (event) => {
+            if (dropdown.classList.contains("active") && !dropdown.contains(event.target) && !menuBtn.contains(event.target)) {
+                dropdown.classList.remove("active");
+            }
+        });
+    </script>
+
+</body>
+</html>

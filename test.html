@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burger Menu with Login</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      background: #333;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .burger {
+      font-size: 26px;
+      cursor: pointer;
+      display: block;
+    }
+
+    .menu {
+      display: none;
+      flex-direction: column;
+      background: #444;
+    }
+
+    .menu a {
+      color: white;
+      padding: 12px;
+      text-decoration: none;
+      border-bottom: 1px solid #555;
+    }
+
+    .menu a:hover {
+      background: #555;
+    }
+
+    .login-btn {
+      background: #ff9800;
+      color: white;
+      padding: 10px;
+      margin: 10px;
+      text-align: center;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .login-btn:hover {
+      background: #e68900;
+    }
+
+    /* Desktop view */
+    @media (min-width: 768px) {
+      .burger {
+        display: none;
+      }
+      .menu {
+        display: flex !important;
+        flex-direction: row;
+        background: none;
+      }
+      .menu a {
+        border: none;
+        padding: 10px 15px;
+      }
+      .login-btn {
+        margin: 0 0 0 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">My Logo</div>
+    <div class="burger" onclick="toggleMenu()">☰</div>
+  </nav>
+  
+  <div class="menu" id="menu">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+    <a href="#" class="login-btn">Login</a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+    }
+  </script>
+</body>
+</html>
